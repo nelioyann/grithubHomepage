@@ -1,0 +1,56 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html{
+    // font-size: 100%;
+    scroll-behavior: smooth;
+    font-size: clamp(100%, calc(1rem + 1.5vw), 40px);
+}
+
+body{
+    
+    overflow-x: hidden;
+    font-family: $font_body;
+    max-width: clamp(10em, 80vw ,100vw);
+    margin: 0 auto;
+    padding: 0;
+    
+}
+
+img, video, picture{
+    max-width: 100%;
+}
+
+p{
+    max-width: 80ch;
+    line-height: 1.7;
+}
+
+
+.theme-light{
+    background-color: $color-light;
+    color: $color-dark;
+}
+
+.theme-dark{
+    background-color: $color-dark;
+    color: $color-light;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    &:link{
+        color: $color-primary;
+    }
+    &:hover{
+        opacity: 0.5;
+    }
+    &:active{
+        color: $color-primary;
+    }
+}
+
+figure{
+    margin: 0 ;
+}

@@ -1,0 +1,161 @@
+.flex {
+    display: flex;
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-sa {
+        justify-content: space-around;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    &-d-c {
+        flex-direction: column;
+    }
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .span-12{
+        grid-column: span 12;
+    }
+    .span-6{
+        grid-column: span 6;
+    }
+}
+
+ul.reset{
+    list-style-type: none;
+    padding: 0;
+    /* margin-left: 0; */
+}
+
+.gap{
+    gap: 0.5em;
+
+    &-s{
+        gap: 1em;
+    }
+    &-m{
+        gap: 2em;
+    }
+}
+
+.padding{
+    padding: 0.5em;
+
+    &-s{
+        padding: 1em;
+    }
+    &-m{
+        padding: 2em;
+    }
+}
+
+.padding-button{
+    &-s{
+        padding: 0.5em 1em;
+    }
+    &-m{
+        padding:1em 2em;
+    }
+}
+
+
+.hide-for-mobile {
+    @include mq-under($breakpoint-mobile) {
+        display: none;
+    }
+}
+.hide-under-tablet {
+    @include mq-under($breakpoint-mobile) {
+        display: none;
+    }
+}
+.hide-for-desktop {
+    @include mq-above($breakpoint-desktop) {
+        display: none;
+    }
+}
+
+
+.border{
+    &-b{
+        border-bottom: 1px solid $color-light;
+    }
+    &-t{
+        border-top: 1px solid $color-dark;
+
+    }
+}
+
+.no{
+    &-padding{
+        padding: 0;
+    }
+    &-margin{
+        margin: 0;
+    }
+    &-overflow{
+        overflow: hidden;
+        &-x{
+            overflow-x: hidden;
+        }
+        &-y{
+            overflow-y: hidden;
+        }
+    }
+}
+
+.responsive-width{
+    width: clamp(10em, 100% , 60em);
+
+
+}
+.responsive-padding{
+    padding: 0 clamp(1em, 10vw , 15em);
+}
+
+.responsive-flex{
+    display: flex;
+    flex-direction: row;
+    @include mq-under($breakpoint-mobile) {
+        flex-direction: column;
+
+    }
+}
+
+a, button{
+    &.primary{
+        background-color: var(--color-primary);
+        color: var(--color-dark);
+        font-weight: bold;
+    }
+    &.secondary{
+        color: $color-primary;
+        border: 1px solid $color-primary;
+    }
+    &.tertiary{
+        color: $color-primary;
+    }
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
